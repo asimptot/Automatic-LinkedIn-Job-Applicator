@@ -2,14 +2,25 @@ from selenium import webdriver
 import pyautogui as pg
 import time
 
-def apply():
-    pg.click(332, 748) #chrome
+def open_chrome_in_toolbar():
+    pg.click(330, 1048)  # chrome
     time.sleep(5)
 
-    for i in range(0, 20, 2):
-        pg.click(87, 54)  # refresh
-        time.sleep(15)
-        for j in range(29+i):
+def refresh():
+    pg.click(129, 77)  # refresh
+    time.sleep(15)
+
+def close():
+    pg.click(1277, 241)  # close
+    time.sleep(3)
+
+def apply():
+
+    open_chrome_in_toolbar()
+    refresh()
+
+    for i in range(0, 25, 2):
+        for j in range(28+i):
             pg.press('tab')
         pg.press('enter')
 
@@ -27,8 +38,7 @@ def apply():
         pg.press('enter') #apply
         time.sleep(2)
 
-        pg.click(918, 169) #close
-        time.sleep(3)
+        close()
 
 apply()
 
