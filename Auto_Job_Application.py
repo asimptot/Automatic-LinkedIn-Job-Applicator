@@ -17,26 +17,28 @@ def close():
 def apply():
 
     open_chrome_in_toolbar()
-    refresh()
 
     for i in range(0, 25, 2):
-        for j in range(28+i):
+        refresh()
+        for j in range(29+i):
             pg.press('tab')
+        time.sleep(5)
         pg.press('enter')
 
-        for m in range(7):
-            pg.press('tab')
-        time.sleep(2)
-
-        pg.press('enter') #right side
+        #for m in range(7):
+        #    pg.press('tab')
+        #time.sleep(5)
+#
+        #pg.press('enter') #right side
+        pg.click(1299, 561)
         time.sleep(3)
 
         for n in range(9):
             pg.press('tab')
-        time.sleep(2)
+        time.sleep(5)
 
         pg.press('enter') #apply
-        time.sleep(2)
+        time.sleep(5)
 
         close()
 
